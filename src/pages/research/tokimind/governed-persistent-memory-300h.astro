@@ -1,0 +1,160 @@
+---
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+
+const manuscriptDoi = "10.5281/zenodo.23175185";
+const datasetDoi = "10.5281/zenodo.23175721";
+const orcid = "0009-0000-6025-4991";
+---
+
+<BaseLayout
+  title="Governed Persistent Memory Under Enterprise Churn — tokiOS Research"
+  description="A 300-hour paired evaluation of tokiMind governed persistent memory across accuracy, security, efficiency, and reliability."
+  canonicalPath="/research/tokimind/governed-persistent-memory-300h/"
+  article={true}
+>
+  <Fragment slot="head">
+    <meta
+      name="citation_title"
+      content="Governed Persistent Memory Under Enterprise Churn"
+    />
+    <meta name="citation_author" content="Michael S. Miller" />
+    <meta name="citation_publication_date" content="2026-10-05" />
+    <meta name="citation_doi" content={manuscriptDoi} />
+    <meta name="citation_technical_report_institution" content="tokiGig LLC" />
+  </Fragment>
+
+  <header class="page-header">
+    <div class="shell">
+      <p class="eyebrow">tokiMind research · v1.0</p>
+
+      <h1 class="paper-title">
+        Governed Persistent Memory Under Enterprise Churn
+      </h1>
+
+      <p class="paper-subtitle">
+        A 300-Hour Paired Evaluation of Accuracy, Security, Efficiency, and Reliability
+      </p>
+
+      <dl class="metadata">
+        <dt>Author</dt>
+        <dd>Michael S. Miller</dd>
+
+        <dt>Affiliation</dt>
+        <dd>tokiGig LLC</dd>
+
+        <dt>ORCID</dt>
+        <dd>
+          <a href={`https://orcid.org/${orcid}`}>{orcid}</a>
+        </dd>
+
+        <dt>Manuscript DOI</dt>
+        <dd>
+          <a href={`https://doi.org/${manuscriptDoi}`}>{manuscriptDoi}</a>
+        </dd>
+
+        <dt>Evidence DOI</dt>
+        <dd>
+          <a href={`https://doi.org/${datasetDoi}`}>{datasetDoi}</a>
+        </dd>
+
+        <dt>Experiment</dt>
+        <dd>tokimind-longitudinal-v4-enterprise-300h-r1</dd>
+
+        <dt>Frozen code revision</dt>
+        <dd>6975e8344666e98ff71e355ebd4ff9e7b0fe08da</dd>
+      </dl>
+
+      <div class="actions">
+        <a
+          class="button primary"
+          href={`https://doi.org/${manuscriptDoi}`}
+        >
+          Read the manuscript
+        </a>
+
+        <a class="button" href={`https://doi.org/${datasetDoi}`}>
+          Open the evidence dataset
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <section class="section">
+    <div class="shell prose">
+      <p class="eyebrow">Headline results</p>
+
+      <div class="result-grid">
+        <div class="metric">
+          <strong>350 / 350</strong>
+          <span>tokiMind scored recall</span>
+        </div>
+
+        <div class="metric">
+          <strong>341 / 350</strong>
+          <span>Full-context recall</span>
+        </div>
+
+        <div class="metric">
+          <strong>66.60%</strong>
+          <span>Lower provider-reported total tokens vs. full context</span>
+        </div>
+
+        <div class="metric">
+          <strong>1,932 / 1,932</strong>
+          <span>Experiment tasks succeeded</span>
+        </div>
+      </div>
+
+      <h2>Abstract</h2>
+
+      <p>
+        Long-running AI agents face a persistent-state tradeoff: bounded context
+        can lose information outside the active window, while accumulated
+        history increases prompt and reasoning burden and does not guarantee that
+        currently valid state will dominate stale or contradictory history.
+      </p>
+
+      <p>
+        This study evaluates tokiMind, a governed persistent-memory system that
+        treats memory as mutable operational state with explicit provenance,
+        authority, contradiction handling, supersession, freshness, revocation,
+        and tenant isolation. A frozen 300-hour benchmark executed 1,932
+        scheduled runs across accumulated full context, bounded context without
+        persistent memory, and bounded context with tokiMind.
+      </p>
+
+      <p>
+        Across 350 paired scored recall cases per cohort, tokiMind achieved
+        350/350 accuracy, full context achieved 341/350, and the bounded-context
+        negative control achieved 0/350. All nine discordant paired cases favored
+        tokiMind.
+      </p>
+
+      <h2>Evidence and reproducibility</h2>
+
+      <p>
+        The public evidence package is deposited separately from the manuscript.
+        It contains scrubbed frozen core evidence, operational evidence,
+        run-level scored recall cases, checkpoint and entity-level summaries,
+        security/governance evaluations, token and latency measurements,
+        reliability summaries, checksums, and reproduction materials.
+      </p>
+
+      <p>
+        The frozen experiment is identified by manifest
+        <code>tokimind-longitudinal-v4-enterprise-300h-v1</code> and Git commit
+        <code>6975e8344666e98ff71e355ebd4ff9e7b0fe08da</code>.
+      </p>
+
+      <h2>Scope</h2>
+
+      <p>
+        The work does not claim that persistent memory or memory governance was
+        invented here, nor that tokiMind is universally superior across models,
+        tasks, or deployment environments. The contribution is the evaluated
+        governed-state system and its frozen longitudinal paired systems
+        evaluation.
+      </p>
+    </div>
+  </section>
+</BaseLayout>
