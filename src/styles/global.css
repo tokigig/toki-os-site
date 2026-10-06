@@ -70,8 +70,8 @@ a:hover {
 }
 
 .brand-mark {
-  font-size: 1.25rem;
-  font-weight: 760;
+  font-size: 1.4rem;
+  font-weight: 780;
   letter-spacing: -0.03em;
 }
 
@@ -83,11 +83,12 @@ a:hover {
 .site-nav {
   display: flex;
   gap: 1.5rem;
-  font-size: 0.9rem;
+  font-size: 0.94rem;
+  font-weight: 650;
 }
 
 .hero {
-  padding: 8rem 0 6rem;
+  padding: 7.5rem 0 5rem;
 }
 
 .eyebrow {
@@ -145,7 +146,7 @@ h1 {
 }
 
 .section {
-  padding: 5rem 0;
+  padding: 4.5rem 0;
   border-top: 1px solid var(--line);
 }
 
@@ -180,6 +181,108 @@ h1 {
 
 .card p {
   color: var(--muted);
+}
+
+
+.proof-strip {
+  margin-top: 3rem;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: rgba(13, 17, 24, 0.82);
+  overflow: hidden;
+}
+
+.proof-item {
+  min-width: 0;
+  padding: 1.05rem 1.15rem;
+}
+
+.proof-item + .proof-item {
+  border-left: 1px solid var(--line);
+}
+
+.proof-item strong,
+.proof-item span,
+.proof-item a {
+  display: block;
+}
+
+.proof-item strong {
+  font-size: 1rem;
+  letter-spacing: -0.02em;
+}
+
+.proof-item span,
+.proof-item a {
+  margin-top: 0.22rem;
+  color: var(--muted);
+  font-size: 0.78rem;
+}
+
+.proof-item a {
+  overflow-wrap: anywhere;
+}
+
+.definition {
+  max-width: 920px;
+}
+
+.category-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.85rem;
+  margin-top: 2.4rem;
+}
+
+.category-card {
+  padding: 1.2rem;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: var(--panel);
+}
+
+.category-card span {
+  display: block;
+  color: var(--accent-soft);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.category-card p {
+  margin: 0.65rem 0 0;
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+
+.category-card-emphasis {
+  border-color: #3267bb;
+  background: linear-gradient(180deg, rgba(23, 52, 94, 0.7), var(--panel));
+}
+
+.system-section {
+  padding-bottom: 4rem;
+}
+
+.card-link {
+  display: block;
+  color: inherit;
+}
+
+.card-link:hover {
+  border-color: #3267bb;
+  color: inherit;
+}
+
+.card-cta {
+  display: inline-block;
+  margin-top: 0.65rem;
+  color: var(--accent-soft);
+  font-size: 0.82rem;
+  font-weight: 650;
 }
 
 .page-header {
@@ -294,8 +397,15 @@ h1 {
   }
 
   .grid,
-  .result-grid {
+  .result-grid,
+  .category-grid,
+  .proof-strip {
     grid-template-columns: 1fr;
+  }
+
+  .proof-item + .proof-item {
+    border-left: 0;
+    border-top: 1px solid var(--line);
   }
 
   .metadata {
