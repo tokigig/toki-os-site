@@ -21,5 +21,6 @@
   },
   "allowScripts": {
     "esbuild": true
-  }
+  },
+  "packageManager": "pnpm@10.34.6"
 }
