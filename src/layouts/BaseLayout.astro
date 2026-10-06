@@ -58,19 +58,38 @@ const canonicalUrl = new URL(canonicalPath, siteUrl).toString();
     </main>
 
     <footer class="site-footer">
-      <div class="shell footer-inner">
-        <div>
+      <div class="shell footer-main">
+        <div class="footer-brand">
           <strong>tokiOS</strong>
-          <p>Research and infrastructure that give AI agents durable identity, governed context, persistent memory, authority, and durable execution.</p>
+          <p>
+            Infrastructure for multi-agent systems: identity, governed context,
+            persistent memory, authority, and durable execution.
+          </p>
         </div>
 
-        <div class="footer-meta">
+        <div class="footer-utility">
+          <div class="footer-group">
+            <span class="footer-label">Contact</span>
+            <a href="mailto:info@toki-os.com">info@toki-os.com</a>
+            <a href="https://x.com/TokiOSHQ" rel="me noopener noreferrer">X · @TokiOSHQ</a>
+          </div>
+
+          <div class="footer-group">
+            <span class="footer-label">Links</span>
+            <a href="/research/">Research</a>
+            <a href="/legal/">Legal</a>
+          </div>
+
+          <p class="footer-patent">
+            Certain technologies described on this site are subject to a pending
+            U.S. patent application.
+          </p>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div class="shell">
           <span>© 2026 tokiGig LLC. All rights reserved.</span>
-          <span>Certain technologies described on this site are subject to a pending U.S. patent application.</span>
-          <a href="mailto:info@toki-os.com">info@toki-os.com</a>
-          <a href="https://x.com/TokiOSHQ" rel="me noopener noreferrer">X · @TokiOSHQ</a>
-          <a href="/research/">Research</a>
-          <a href="/legal/">Legal</a>
         </div>
       </div>
     </footer>
