@@ -1,0 +1,49 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+---
+
+<BaseLayout
+  title="Research — tokiOS"
+  description="Published research, evidence packages, and reproducibility materials from the tokiOS project."
+  canonicalPath="/research/"
+>
+  <header class="page-header">
+    <div class="shell">
+      <p class="eyebrow">Research</p>
+      <h1>Published systems research.</h1>
+      <p class="hero-copy">
+        Research from tokiOS focuses on persistent agent state, governed memory,
+        durable execution, and reproducible evaluation.
+      </p>
+    </div>
+  </header>
+
+  <section class="section">
+    <div class="shell">
+      <article class="card">
+        <p class="eyebrow">tokiMind · 2026</p>
+        <h2>Governed Persistent Memory Under Enterprise Churn</h2>
+        <p>
+          A 300-hour paired evaluation of accuracy, security, efficiency, and
+          reliability across full-history, bounded-context negative-control,
+          and governed-memory cohorts.
+        </p>
+
+        <div class="actions">
+          <a
+            class="button primary"
+            href="/research/tokimind/governed-persistent-memory-300h/"
+          >
+            Research overview
+          </a>
+          <a class="button" href="https://doi.org/10.5281/zenodo.23175185">
+            Manuscript DOI
+          </a>
+          <a class="button" href="https://doi.org/10.5281/zenodo.23175721">
+            Evidence dataset
+          </a>
+        </div>
+      </article>
+    </div>
+  </section>
+</BaseLayout>

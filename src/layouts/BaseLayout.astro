@@ -1,0 +1,74 @@
+---
+import "../styles/global.css";
+
+interface Props {
+  title: string;
+  description: string;
+  canonicalPath?: string;
+  article?: boolean;
+}
+
+const {
+  title,
+  description,
+  canonicalPath = "/",
+  article = false,
+} = Astro.props;
+
+const siteUrl = "https://toki-os.com";
+const canonicalUrl = new URL(canonicalPath, siteUrl).toString();
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonicalUrl} />
+
+    <meta property="og:type" content={article ? "article" : "website"} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonicalUrl} />
+
+    <meta name="twitter:card" content="summary" />
+
+    <slot name="head" />
+  </head>
+
+  <body>
+    <header class="site-header">
+      <div class="shell header-inner">
+        <a class="brand" href="/" aria-label="tokiOS home">
+          <span class="brand-mark">tokiOS</span>
+          <span class="brand-sub">Distributed Agent Operating System</span>
+        </a>
+
+        <nav class="site-nav" aria-label="Primary navigation">
+          <a href="/research/">Research</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <slot />
+    </main>
+
+    <footer class="site-footer">
+      <div class="shell footer-inner">
+        <div>
+          <strong>tokiOS</strong>
+          <p>Distributed systems research for persistent, governed AI agents.</p>
+        </div>
+
+        <div class="footer-meta">
+          <span>Developed by tokiGig LLC</span>
+          <a href="/research/">Research</a>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
